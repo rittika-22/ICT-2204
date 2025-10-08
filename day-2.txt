@@ -1,0 +1,113 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| iit                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.04 sec)
+
+mysql> notee;
+mysql> CREATE DATABASE IIT14BATCH;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| iit                |
+| iit14batch         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> USE IIT14BATCH;
+Database changed
+mysql> CREATE TABLE STUDENT(STUDENT_ID INT, STUDENT_NAME VARCHAR(30), SESSION VARCHAR(10), CGPA FLOAT(5,2), GENDER VARCHAR(7), MOBILEPHONE VARCHAR(15), EMAIL VARCHAR(100), DATE_OF_BIRTH DATE);
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_iit14batch |
++----------------------+
+| student              |
++----------------------+
+1 row in set (0.01 sec)
+
+mysql> DESC STUDENT;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| STUDENT_ID    | int          | YES  |     | NULL    |       |
+| STUDENT_NAME  | varchar(30)  | YES  |     | NULL    |       |
+| SESSION       | varchar(10)  | YES  |     | NULL    |       |
+| CGPA          | float(5,2)   | YES  |     | NULL    |       |
+| GENDER        | varchar(7)   | YES  |     | NULL    |       |
+| MOBILEPHONE   | varchar(15)  | YES  |     | NULL    |       |
+| EMAIL         | varchar(100) | YES  |     | NULL    |       |
+| DATE_OF_BIRTH | date         | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+mysql> CREATE TABLE CUST(CUST_ID INT NOT NULL, CUST_NAME VARCHAR(10));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> 

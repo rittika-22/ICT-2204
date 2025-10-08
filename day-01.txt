@@ -1,0 +1,16 @@
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE DATABASE IIT;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Terminal close -- exit!
