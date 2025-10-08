@@ -111,3 +111,14 @@ mysql>
 mysql> 
 mysql> 
 mysql> 
+mysql> INSERT INTO CUST(CUST_ID, CUST_NAME) VALUES(1,'ASD');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM CUST;
++---------+-----------+
+| CUST_ID | CUST_NAME |
++---------+-----------+
+|       1 | ASD       |
++---------+-----------+
+1 row in set (0.00 sec)
+
