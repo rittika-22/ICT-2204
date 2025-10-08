@@ -122,3 +122,145 @@ mysql> SELECT * FROM CUST;
 +---------+-----------+
 1 row in set (0.00 sec)
 
+mysql> DROP TABLE CUST;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> SELECT*FROM CUST;
+ERROR 1146 (42S02): Table 'iit14batch.cust' doesn't exist
+mysql> CREATE TABLE CUST(CUST_ID INT UNIQUE,CUST_NAME VARCHAR(10));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO CUST(CUST_ID, CUST_NAME) VALUES(1,'ASD');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CUST(CUST_ID, CUST_NAME) VALUES(1,'ASD');
+ERROR 1062 (23000): Duplicate entry '1' for key 'cust.CUST_ID'
+mysql> DROP TABLE CUST;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE CUST(CUST_ID INT, CUST_NAME VARCHAR(10), UNIQUE(CUST_ID));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO CUST(CUST_ID, CUST_NAME) VALUES(1,'ASD');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CUST(CUST_ID, CUST_NAME) VALUES(1,'ASD');
+ERROR 1062 (23000): Duplicate entry '1' for key 'cust.CUST_ID'
+mysql> DROP TABLE CUST;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE CUST(CUST_ID INT, CUST_NAME VARCHAR(10),CONSTRAINT uc_student_id UNIQUE(CUST_ID));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO CUST(CUST_ID, CUST_NAME) VALUES(1,'ASD');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CUST(CUST_ID, CUST_NAME) VALUES(1,'ASD');
+ERROR 1062 (23000): Duplicate entry '1' for key 'cust.uc_student_id'
+mysql> CREATE TABLE USER(USER_ID INT NOT NULL,USER_NAME VARCHAR(30));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO USER(USER_ID,USER_NAME) VCALUES(2,'RITTIKA');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VCALUES(2,'RITTIKA')' at line 1
+mysql> INSERT INTO USER(USER_ID,USER_NAME) VALUES(2000,'RITTIKA);
+    '> 
+    '> ;
+    '> INSERT INTO USER(USER_ID,USER_NAME) VALUES(2000,'RITTIKA');
+    '> mysql
+    '> ^C
+mysql> SELECT * FROM USER;
+Empty set (0.00 sec)
+
+mysql> CREATE TABLE TASK1(TASK1_ID INT NOT NULL, TASK1_NAME VARCHAR(10));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_iit14batch |
++----------------------+
+| cust                 |
+| student              |
+| task1                |
+| user                 |
++----------------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT*FROM TASK1
+    -> ;
+Empty set (0.00 sec)
+
+mysql> INSERT INTO TASK1(TASK1_ID,TASK1_NAME) VALUES(1,'ABC');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO TASK1(TASK1_ID,TASK1_NAME) VALUES(1,'ABC');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT*FROM TASK1;
++----------+------------+
+| TASK1_ID | TASK1_NAME |
++----------+------------+
+|        1 | ABC        |
+|        1 | ABC        |
++----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> DROP TABLE TASK1;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE TASK1(TASK1_ID INT,TASK1_NAME VARCHAR(30), UNIQUE(NOT NULL));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NOT NULL))' at line 1
+mysql> CREATE TABLE TASK1(TASK1_ID INT,TASK1_NAME VARCHAR(30), NOT NULL(TASK1_ID));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NOT NULL(TASK1_ID))' at line 1
+mysql> DROP TABLE TASK1;
+ERROR 1051 (42S02): Unknown table 'iit14batch.task1'
+mysql> CREATE TABLE TASK1(TASK1_ID INT PRIMARY KEY, TASK1_NAME);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> CREATE TABLE TASK1(TASK1_ID INT PRIMARY KEY, TASK1_NAME VARCHAR(30));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO TASK1(TASK1_ID,TASK1_NAME) VALUES(1,'ABC');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> 
+mysql> INSERT INTO TASK1(TASK1_ID,TASK1_NAME) VALUES(1,'ABC');
+ERROR 1062 (23000): Duplicate entry '1' for key 'task1.PRIMARY'
+mysql> CREATE TABLE TASK2(TASK2_ID INT, TASK2_NAME VARCHAR(30), PRIMARY KEY(TASK2_ID));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO TASK2(TASK2_ID,TASK2_NAME) VALUES(1,'ABC');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO TASK2(TASK2_ID,TASK2_NAME) VALUES(1,'ABC');
+ERROR 1062 (23000): Duplicate entry '1' for key 'task2.PRIMARY'
+mysql> CREATE TABLE TASK3(TASK3_ID INT,TASK3_NAME VARCHAR(30), CONSTRAINT pk_task3_id PRIMARY KEY(TASK3_ID));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO TASK3(TASK3_ID,TASK3_NAME) VALUES(1,'ABC');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO TASK3(TASK3_ID,TASK3_NAME) VALUES(1,'ABC');
+ERROR 1062 (23000): Duplicate entry '1' for key 'task3.PRIMARY'
+mysql> SELECT*FROM TASK1;
++----------+------------+
+| TASK1_ID | TASK1_NAME |
++----------+------------+
+|        1 | ABC        |
++----------+------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT*FROM TASK2;
++----------+------------+
+| TASK2_ID | TASK2_NAME |
++----------+------------+
+|        1 | ABC        |
++----------+------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT*FROM TASK3;
++----------+------------+
+| TASK3_ID | TASK3_NAME |
++----------+------------+
+|        1 | ABC        |
++----------+------------+
+1 row in set (0.00 sec)
+
