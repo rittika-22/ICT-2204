@@ -1,0 +1,276 @@
+mysql> USE IIT;
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.00 sec)
+
+mysql> USE IIT14BATCH;
+Database changed
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_iit14batch |
++----------------------+
+| cust                 |
+| student              |
+| task1                |
+| task2                |
+| task3                |
+| user                 |
++----------------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT*FROM CUST;
++---------+-----------+
+| CUST_ID | CUST_NAME |
++---------+-----------+
+|       1 | ASD       |
++---------+-----------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO CUST(CUST_ID,CUST_NAME) VALUES(2,'DFGH');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO CUST(CUST_ID,CUST_NAME) VALUES(3,'EF');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CUST(CUST_ID,CUST_NAME) VALUES(2,'DFGH');
+ERROR 1062 (23000): Duplicate entry '2' for key 'cust.uc_student_id'
+mysql> USE TASK1;
+ERROR 1049 (42000): Unknown database 'task1'
+mysql> USE IIT14BATCH;
+Database changed
+mysql> SELECT*FROM TASK1;
++----------+------------+
+| TASK1_ID | TASK1_NAME |
++----------+------------+
+|        1 | ABC        |
++----------+------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO TASK1(TASK1_ID,TASK2_NAME) VALUES(2,'DEF');
+ERROR 1054 (42S22): Unknown column 'TASK2_NAME' in 'field list'
+mysql> INSERT INTO TASK1(TASK1_ID,TASK1_NAME) VALUES(2,'DEF');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO TASK1(TASK1_ID,TASK1_NAME) VALUES(2,'DEF');
+ERROR 1062 (23000): Duplicate entry '2' for key 'task1.PRIMARY'
+mysql> USE IIT;
+Database changed
+mysql> CREATE TABLE  STUDENT(STUDENT_ID INT,STUDENT_CODE VARCHAR(20),STUDENT_NAME VARCHAR(30), STUDENT_AGE TINYINT,SEMESTER VARCHAR(40), PRIMARY_KEY(STUDENT_ID,STUDENT_CODE));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(STUDENT_ID,STUDENT_CODE))' at line 1
+mysql> CREATE TABLE USERTYPE(USER_TYPE_ID INT PRIMARY,USER_TYPE VARCHAR(2O));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',USER_TYPE VARCHAR(2O))' at line 1
+mysql> CREATE TABLE USERTYPE(USER_TYPE_ID INT PRIMARY,USER_TYPE_NAME VARCHAR(2O));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',USER_TYPE_NAME VARCHAR(2O))' at line 1
+mysql> CREATE TABLE USERTYPE(USER_TYPE_ID INT PRIMARY KEY,USER_TYPE_NAME VARCHAR(2O));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2O))' at line 1
+mysql> CREATE TABLE USERTYPE(USER_TYPE_ID INT PRIMARY KEY,USER_TYPE_NAME VARCHAR(2O)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2O)' at line 1
+mysql> CREATE TABLE USERTYPE (USER_TYPE_ID INT PRIMARY KEY, USER_TYPE_NAME VARCHAR(2O));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2O))' at line 1
+mysql> CREATE TABLE USERTYPE (USER_TYPE_ID INT PRIMARY KEY, USER_TYPE_NAME VARCHAR(2O));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2O))' at line 1
+mysql> CREATE TABLE USERTYPE (USER_TYPE_ID INT PRIMARY KEY, USER_TYPE_NAME VARCHAR (2O));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2O))' at line 1
+mysql> Terminal close -- exit!
+mysql> mysql> CREATE TABLE TASK4(TASK1_ID INT,TASK1_NAME VARCHAR(30), NOT NULL(TASK1_ID));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql> CREATE TABLE TASK4(TASK1_ID INT,TASK1_NAME VARCHAR(30), NOT NULL(TASK1_ID' at line 1
+mysql> ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NOT NULL(TASK1_ID))' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1064 (42000): You have an error in your SQL syntax' at line 1
+    -> mysql> CREATE TABLE TASK4(TASK1_ID INT,TASK1_NAME VARCHAR(30));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'the manual that corresponds to your MySQL server version for the right syntax to' at line 1
+mysql> Query OK, 0 rows affected (0.05 sec)
+    -> 
+    -> mysql> CREATE TABLE USERTYPE(UT_ID INT PRIMARY KEY,UT_NAME VARCHAR(30));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.05 sec)
+
+mysql> CREATE TABLE USERTYPE(UT_ID INT PRI' at line 1
+mysql> Query OK, 0 rows affected (0.02 sec)
+    -> 
+    -> mysql> INSERT INTO USERTYPE(UT_ID,UT_NAME) VALUES(1,'ABC');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO USERTYPE(UT_ID,UT_NAME)' at line 1
+mysql> Query OK, 1 row affected (0.00 sec)
+    -> 
+    -> mysql> INSERT INTO USERTYPE(UT_ID,UT_NAME) VALUES(2,'DEF');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO USERTYPE(UT_ID,UT_NAME) ' at line 1
+mysql> Query OK, 1 row affected (0.00 sec)
+    -> 
+    -> mysql> INSERT INTO USERTYPE(UT_ID,UT_NAME) VALUES(3,'GHI');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO USERTYPE(UT_ID,UT_NAME) ' at line 1
+mysql> Query OK, 1 row affected (0.00 sec)
+    -> 
+    -> mysql> INSERT INTO USERTYPE(UT_ID,UT_NAME) VALUES(4,'JKL');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO USERTYPE(UT_ID,UT_NAME) ' at line 1
+mysql> Query OK, 1 row affected (0.00 sec)
+    -> 
+    -> mysql> CREATE TABLE USER(USER_ID INT PRIMARY KEY, USER_NAME VARCHAR(20), DOB DATE, UT_ID INT,FOREIGN KEY(UT_ID) REFERENCES USERTYPE(UT_ID));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 1 row affected (0.00 sec)
+
+mysql> CREATE TABLE USER(USER_ID INT PRIMAR' at line 1
+mysql> ERROR 1050 (42S01): Table 'user' already exists
+    -> mysql> DROP TABLE USER;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1050 (42S01): Table 'user' already exists
+mysql> DROP TABLE USER' at line 1
+mysql> Query OK, 0 rows affected (0.01 sec)
+    -> 
+    -> mysql> CREATE TABLE USER(USER_ID INT PRIMARY KEY, USER_NAME VARCHAR(20), DOB DATE, UT_ID INT,FOREIGN KEY(UT_ID) REFERENCES USERTYPE(UT_ID));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE USER(USER_ID INT PRIMA' at line 1
+mysql> Query OK, 0 rows affected (0.04 sec)
+    -> 
+    -> mysql> INSERT INTO USER(USER_ID,USER_NAME,DOB,UT_ID) VALUES(101,'QWE','2003-01-01',1);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO USER(USER_ID,USER_NAME,' at line 1
+mysql> Query OK, 1 row affected (0.00 sec)
+    -> 
+    -> mysql> INSERT INTO USER(USER_ID,USER_NAME,DOB,UT_ID) VALUES(101,'QWE','2003-01-01',5);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO USER(USER_ID,USER_NAME,D' at line 1
+mysql> ERROR 1062 (23000): Duplicate entry '101' for key 'user.PRIMARY'
+    -> mysql> INSERT INTO USER(USER_ID,USER_NAME,DOB,UT_ID) VALUES(102,'QMW','2003-01-01',5);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1062 (23000): Duplicate entry '101' for key 'user.PRIMARY'
+mysql> INSERT I' at line 1
+mysql> ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`iit14batch`.`user`, CONSTRAINT `user_ibfk_1` FOREIGN KEY (`UT_ID`) REFERENCES `usertype` (`UT_ID`))
+    -> mysql> CREATE TABLE USER2(USER_ID INT PRIMARY KEY, USER_NAME VARCHAR(20), DOB DATE, UT_ID INT,CONSTRAINT fk_ut_id FOREIGN KEY(UT_ID) REFERENCES USERTYPE(UT_ID));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint f' at line 1
+mysql> Query OK, 0 rows affected (0.04 sec)
+    -> 
+    -> mysql> INSERT INTO USER1(USER_ID,USER_NAME,DOB,UT_ID) VALUES(102,'QMW','2003-01-01',5);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO USER1(USER_ID,USER_NAME' at line 1
+mysql> ERROR 1146 (42S02): Table 'iit14batch.user1' doesn't exist
+    '> mysql> INSERT INTO USER2(USER_ID,USER_NAME,DOB,UT_ID) VALUES(102,'QMW','2003-01-01',5);
+    '> ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`iit14batch`.`user2`, CONSTRAINT `fk_ut_id` FOREIGN KEY (`UT_ID`) REFERENCES `usertype` (`UT_ID`))
+    '> mysql> use iit;
+    '> Database changed
+    '> mysql> CREATE TABLE HALL_INFO(HALL_ID INT PRIMARY KEY, HALL_NAME VARCHAR(50));
+    '> Query OK, 0 rows affected (0.02 sec)
+    '> 
+    '> mysql> INSERT INTO HALL_INFO(HALL_ID,HALL_NAME) VALUES(17,'RH');
+    '> Query OK, 1 row affected (0.00 sec)
+    '> 
+    '> mysql> INSERT INTO HALL_INFO(HALL_ID,HALL_NAME) VALUES(18,'FH');
+    '> Query OK, 1 row affected (0.00 sec)
+    '> 
+    '> mysql> INSERT INTO HALL_INFO(HALL_ID,HALL_NAME) VALUES(19,'BTBH');
+    '> Query OK, 1 row affected (0.00 sec)
+    '> 
+    '> mysql> INSERT INTO HALL_INFO(HALL_ID,HALL_NAME) VALUES(20,'SKH');
+    '> Query OK, 1 row affected (0.00 sec)
+    '> 
+    '> mysql> CREATE TABLE STUDENT_INFO(ST_ID INT PRIMARY KEY, STUDENT_NAME VARCHAR(50),REG_NO INT PRIMARY KEY,HALL_ID,FOREIGN KEY(HALL_ID) REFERENCES HALL_INFO(HALL_ID));
+    '> ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',FOREIGN KEY(HALL_ID) REFERENCES HALL_INFO(HALL_ID))' at line 1
+    '> mysql> CREATE TABLE STUDENT_INFO(ST_ID INT PRIMARY KEY, ST_NAME VARCHAR(50),REG_NO INT PRIMARY KEY, HALL_ID INT,FOREIGN KEY(HALL_ID) REFERENCES HALL_INFO(HALL_ID));
+    '> ERROR 1068 (42000): Multiple primary key defined
+    '> mysql> CREATE TABLE STUDENT_INFO(ST_ID INT PRIMARY KEY, ST_NAME VARCHAR(50),REG_NO INT, HALL_ID INT,FOREIGN KEY(HALL_ID) REFERENCES HALL_INFO(HALL_ID));
+    '> Query OK, 0 rows affected (0.04 sec)
+    '> 
+    '> mysql> INSERT INTO STUDENT_INFO(ST_ID,ST_NAME,REG_NO,HALL_ID) VALUES(101,'QMW',2023101,17);
+    '> Query OK, 1 row affected (0.01 sec)
+    '> 
+    '> mysql> INSERT INTO STUDENT_INFO(ST_ID,ST_NAME,REG_NO,HALL_ID) VALUES(102,'QMW',2023102,16);
+    '> ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`iit`.`student_info`, CONSTRAINT `student_info_ibfk_1` FOREIGN KEY (`HALL_ID`) REFERENCES `hall_info` (`HALL_ID`))
+    '> mysql> CREATE TABLE STUDENT_INFO2(ST_ID INT PRIMARY KEY, ST_NAME VARCHAR(50),REG_NO INT, HALL_ID INT,CONSTRAINT fk_hall_id FOREIGN KEY(HALL_ID) REFERENCES HALL_INFO(HALL_ID));
+    '> Query OK, 0 rows affected (0.04 sec)
+    '> 
+    '> mysql> INSERT INTO STUDENT_INFO(ST_ID,ST_NAME,REG_NO,HALL_ID) VALUES(102,'QMW',2023102,16);
+    '> ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`iit`.`student_info`, CONSTRAINT `student_info_ibfk_1` FOREIGN KEY (`HALL_ID`) REFERENCES `hall_info` (`HALL_ID`))
+    '> mysql> INSERT INTO STUDENT_INFO2(ST_ID,ST_NAME,REG_NO,HALL_ID) VALUES(102,'QMW',2023102,16);
+    '> ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`iit`.`student_info2`, CONSTRAINT `fk_hall_id` FOREIGN KEY (`HALL_ID`) REFERENCES `hall_info` (`HALL_ID`))
+    '> mysql> CREATE TABLE STUDENT_INFO3(ST_ID INT, ST_NAME VARCHAR(50),REG_NO INT, HALL_ID INT,PRIMARY KEY(ST_ID,REG_NO),CONSTRAINT fk_hall_id FOREIGN KEY(HALL_ID) REFERENCES HALL_INFO(HALL_ID));
+    '> ERROR 1826 (HY000): Duplicate foreign key constraint name 'fk_hall_id'
+    '> mysql> CREATE TABLE STUDENT_INFO3(ST_ID INT, ST_NAME VARCHAR(50),REG_NO INT, HALL_ID INT,PRIMARY KEY(ST_ID,REG_NO),CONSTRAINT fk_hall_id_st3 FOREIGN KEY(HALL_ID) REFERENCES HALL_INFO(HALL_ID));
+    '> Query OK, 0 rows affected (0.04 sec)
+    '> 
+    '> mysql> INSERT INTO STUDENT_INFO3(ST_ID,ST_NAME,REG_NO,HALL_ID) VALUES(102,'QMW',2023102,17);
+    '> Query OK, 1 row affected (0.01 sec)
+    '> 
+    '> mysql> INSERT INTO STUDENT_INFO3(ST_ID,ST_NAME,REG_NO,HALL_ID) VALUES(102,'QMW',2023102,18);
+    '> mysql> INSERT INTO STUDENT_INFO3(ST_ID,ST_NAME,REG_NO,HALL_ID) VALUES(102,'QMW',2023102,18);
+    '> 
+    '> ^C
+mysql> CREATE TABLE TEST1(TEST_ID INT,TEST_NAME VARCHAR(20), AGE SMALLINT,CHECK(AGE>=18));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO TEST1(TEST_ID,TEST_NAME,AGE) VALUES(101,'ABC',12);
+ERROR 3819 (HY000): Check constraint 'test1_chk_1' is violated.
+mysql> INSERT INTO TEST1(TEST_ID,TEST_NAME,AGE) VALUES(101,'ABC',21);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> DROP TABLE TEST1;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE TEST1(TEST_ID INT,TEST_NAME VARCHAR(20) DEFAULT 'ECG', AGE SMALLINT,CHECK(AGE>=18),TEST_DATE TIMESTAMP DEFAULT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> CREATE TABLE TEST1(TEST_ID INT,TEST_NAME VARCHAR(20) DEFAULT 'ECG', AGE SMALLINT,CHECK(AGE>=18),TEST_DATE DATETIME DEFAULT CURRENT_TIMESTAMP);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO TEST1(TEST_ID,AGE) VALUES(101,21);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT*FROM TEST1;
++---------+-----------+------+---------------------+
+| TEST_ID | TEST_NAME | AGE  | TEST_DATE           |
++---------+-----------+------+---------------------+
+|     101 | ECG       |   21 | 2025-10-12 12:13:23 |
++---------+-----------+------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE HALL(TEST_ID INT DEFAULT 18,HALL_NAME VARCHAR(30) DEFAULT 'FAZILATUNNESA', ST_ID INT,CHECK(ST_ID>=1500),TEST_DATE DATETIME DEFAULT CURRENT_TIMESTAMP);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO HALL(ST_ID) VALUES(2000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO HALL(ST_ID) VALUES(15);
+ERROR 3819 (HY000): Check constraint 'hall_chk_1' is violated.
+mysql> SELECT*FROM HALL;
++---------+---------------+-------+---------------------+
+| TEST_ID | HALL_NAME     | ST_ID | TEST_DATE           |
++---------+---------------+-------+---------------------+
+|      18 | FAZILATUNNESA |  2000 | 2025-10-12 12:19:53 |
++---------+---------------+-------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT*FROM HALL_INFO;
++---------+-----------+
+| HALL_ID | HALL_NAME |
++---------+-----------+
+|      17 | RH        |
+|      18 | FH        |
+|      19 | BTBH      |
+|      20 | SKH       |
++---------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT*FROM STUDENT_INFO3;
++-------+---------+---------+---------+
+| ST_ID | ST_NAME | REG_NO  | HALL_ID |
++-------+---------+---------+---------+
+|   102 | QMW     | 2023102 |      17 |
++-------+---------+---------+---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT*FROM STUDENT_INFO;
++-------+---------+---------+---------+
+| ST_ID | ST_NAME | REG_NO  | HALL_ID |
++-------+---------+---------+---------+
+|   101 | QMW     | 2023101 |      17 |
++-------+---------+---------+---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT*FROM STUDENT_INFO2;
+Empty set (0.00 sec)
+
